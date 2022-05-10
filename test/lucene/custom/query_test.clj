@@ -1,6 +1,6 @@
-(ns lmgrep.lucene.query-test
+(ns lucene.custom.query-test
   (:require [clojure.test :refer [deftest is]]
-            [lmgrep.lucene.query :as q])
+            [lucene.custom.query :as q])
   (:import (org.apache.lucene.search BooleanQuery)
            (org.apache.lucene.queryparser.surround.query DistanceRewriteQuery)
            (org.apache.lucene.analysis.standard StandardAnalyzer)))

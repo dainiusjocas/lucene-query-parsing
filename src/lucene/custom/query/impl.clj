@@ -1,4 +1,4 @@
-(ns lmgrep.lucene.query.impl
+(ns lucene.custom.query.impl
   (:import (org.apache.lucene.search Query)
            (org.apache.lucene.queryparser.classic QueryParser)
            (org.apache.lucene.queryparser.complexPhrase ComplexPhraseQueryParser)

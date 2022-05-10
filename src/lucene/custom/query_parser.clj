@@ -1,5 +1,5 @@
-(ns lmgrep.lucene.query-parser
-  (:require [lmgrep.lucene.query-parser.parsers :as parsers])
+(ns lucene.custom.query-parser
+  (:require [lucene.custom.query-parser.parsers :as parsers])
   (:import (org.apache.lucene.analysis Analyzer)
            (org.apache.lucene.analysis.standard StandardAnalyzer)))
 

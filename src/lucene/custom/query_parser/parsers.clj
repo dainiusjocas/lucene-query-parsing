@@ -1,5 +1,5 @@
-(ns lmgrep.lucene.query-parser.parsers
-  (:require [lmgrep.lucene.query-parser.conf :as query-parser.conf])
+(ns lucene.custom.query-parser.parsers
+  (:require [lucene.custom.query-parser.conf :as query-parser.conf])
   (:import (clojure.lang Indexed)
            (org.apache.lucene.analysis Analyzer)
            (org.apache.lucene.analysis.standard StandardAnalyzer)

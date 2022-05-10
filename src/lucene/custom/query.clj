@@ -1,6 +1,6 @@
-(ns lmgrep.lucene.query
-  (:require [lmgrep.lucene.query.impl :as impl]
-            [lmgrep.lucene.query-parser :as query-parser])
+(ns lucene.custom.query
+  (:require [lucene.custom.query.impl :as impl]
+            [lucene.custom.query-parser :as query-parser])
   (:import (org.apache.lucene.analysis Analyzer)
            (org.apache.lucene.analysis.standard StandardAnalyzer)
            (org.apache.lucene.search Query)))
@@ -26,5 +26,5 @@
      (impl/parse* query-parser query field-name))))
 
 (comment
-  (lmgrep.lucene.query/parse "foo bar baz")
-  (lmgrep.lucene.query/parse "foo bar baz" :classic {} "field-name" (StandardAnalyzer.)))
+  (lucene.custom.query/parse "foo bar baz")
+  (lucene.custom.query/parse "foo bar baz" :classic {} "field-name" (StandardAnalyzer.)))

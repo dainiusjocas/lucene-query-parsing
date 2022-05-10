@@ -1,4 +1,4 @@
-(ns lmgrep.lucene.query-parser.conf
+(ns lucene.custom.query-parser.conf
   (:require [clojure.string :as str])
   (:import (java.util Locale TimeZone)
            (org.apache.lucene.document DateTools$Resolution)
