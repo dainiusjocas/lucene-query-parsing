@@ -1,23 +1,34 @@
 # lucene-query-parsing
 
-Library to build [Lucene](https://lucene.apache.org) query parsers and parse queries in the data-driven fashion.
+Library to parse [Lucene](https://lucene.apache.org) queries and build query parsers in the data-driven fashion.
 
 ## Quickstart
 
 Dependencies:
 ```clojure
 {:deps
- {lt.jocas/query-parsing {:local/root "modules/query-parsing"}}}
+ {lt.jocas/lucene-query-parsing {:mvn/version "RELEASE"}}}
 ```
 Code:
 ```clojure
-(require '[lmgrep.lucene.query :as q])
+(require '[lucene.custom.query :as q])
 
+;; Parse queries
 (q/parse "foo bar baz")
 ;; => #object[org.apache.lucene.search.BooleanQuery 0x650526d1 "foo bar baz"]
 
-(q/parse "foo bar baz" :classic {} "field-name")
+(q/parse "*foo bar baz" :classic {:allow-leading-wildcard true} "field-name")
 ;; => #object[org.apache.lucene.search.BooleanQuery 0x3218294 "field-name:foo field-name:bar field-name:baz"]
+
+
+(require '[lucene.custom.query-parser :as query-parser])
+
+;; Create query parser
+(query-parser/create :classic {:allow-leading-wildcard true})
+;; =>
+;; #object[org.apache.lucene.queryparser.classic.QueryParser
+;;         0x36df3ba2
+;;         "org.apache.lucene.queryparser.classic.QueryParser@36df3ba2"]
 ```
 
 ## Available Query Parsers
