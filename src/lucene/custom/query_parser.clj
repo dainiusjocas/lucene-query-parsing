@@ -1,5 +1,6 @@
 (ns lucene.custom.query-parser
-  (:require [lucene.custom.query-parser.parsers :as parsers])
+  (:require [lucene.custom.query-parser.parsers :as parsers]
+            [lucene.custom.query-parser.conf :as conf])
   (:import (org.apache.lucene.analysis Analyzer)
            (org.apache.lucene.analysis.standard StandardAnalyzer)))
 
@@ -29,6 +30,26 @@
      :standard (parsers/standard conf analyzer)
      (parsers/classic conf field-name analyzer))))
 
+(defn default-config
+  "Given the query parser key, returns a hashmap with the default options for that query parser."
+  [query-parser-name]
+  (let [query-parser (create query-parser-name)
+        klass->defaults (reduce-kv
+                          (fn [m k v]
+                            (assoc m k (reduce (fn [acc [k v]]
+                                                 (assoc acc k (:default v)))
+                                               {} v)))
+                          {} conf/query-parser-class->attrs)]
+    (reduce (fn [acc [klass defaults]]
+              (if (instance? ^Class klass query-parser)
+                (merge acc defaults)
+                acc)) {} klass->defaults)))
+
 (comment
   (create)
-  (create "classic" {} "field-name" (StandardAnalyzer.)))
+  (create "classic" {} "field-name" (StandardAnalyzer.))
+  ;; create all query parsers with their defaults
+  (let [qp-kws #{:classic :complex-phrase :surround :simple :standard}]
+    (map #(lucene.custom.query-parser/create
+            %
+            (lucene.custom.query-parser/default-config %)) qp-kws)))
