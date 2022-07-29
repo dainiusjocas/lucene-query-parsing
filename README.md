@@ -1,3 +1,7 @@
+[![Clojars Project](https://img.shields.io/clojars/v/lt.jocas/lucene-query-parsing.svg)](https://clojars.org/lt.jocas/lucene-query-parsing)
+[![cljdoc badge](https://cljdoc.org/badge/lt.jocas/lucene-query-parsing)](https://cljdoc.org/d/lt.jocas/lucene-query-parsing/CURRENT)
+[![Tests](https://github.com/dainiusjocas/lucene-query-parsing/actions/workflows/test.yml/badge.svg)](https://github.com/dainiusjocas/lucene-query-parsing/actions/workflows/test.yml)
+
 # lucene-query-parsing
 
 Library to parse [Lucene](https://lucene.apache.org) queries and build query parsers in the data-driven fashion.
