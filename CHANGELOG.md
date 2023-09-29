@@ -4,9 +4,15 @@ For a list of breaking changes, check [here](#breaking-changes).
 
 ## Unreleased
 
+## v1.0.12 (2023-08-31)
+
 - Upgrade to Lucene 9.8.0 (#5)
 
-## v1.0.8 (2022-06-17)
+## v1.0.11 (2023-08-31)
+
+- Upgrade to Lucene 9.7.0 (#3)
+
+## v1.0.8 (2023-06-17)
 
 - Upgrade to Lucene 9.6.0
 
