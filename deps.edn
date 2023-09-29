@@ -1,7 +1,7 @@
 {:paths ["src"]
- :deps  {org.apache.lucene/lucene-core        {:mvn/version "9.7.0"}
-         org.apache.lucene/lucene-queries     {:mvn/version "9.7.0"}
-         org.apache.lucene/lucene-queryparser {:mvn/version "9.7.0"}}
+ :deps  {org.apache.lucene/lucene-core        {:mvn/version "9.8.0"}
+         org.apache.lucene/lucene-queries     {:mvn/version "9.8.0"}
+         org.apache.lucene/lucene-queryparser {:mvn/version "9.8.0"}}
  :aliases
  {:test  {:extra-paths ["test"]
           :extra-deps  {io.github.cognitect-labs/test-runner
